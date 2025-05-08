@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --font-sm: 0.875em; /* Fonte pequena */
+  --font-md: 1.124em; /* Fonte média */
+  --font-x-md: 1.667em; /* Fonte extra média */
+  --font-x-lg: 3.075em; /* Fonte extra grande */
+}
+
+/* Estilos para telas maiores que 787px */
+@media (min-width: 787px) {
+  :root {
+    --font-sm: 0.875em;
+    --font-md: 1.124em;
+    --font-x-md: 1.667em;
+    --font-x-lg: 3.075em;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+img,
+span,
+input,
+label,
+button {
+  display: block;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  scroll-padding: 2.5rem;
+}
+
+html,
+body {
+  height: fit-content;
+  width: 100vw;
+}
+
+body {
+  background-color: #141c2f;
+}
