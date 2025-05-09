@@ -1,0 +1,56 @@
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (max-width: 429px) {
+    justify-content: center;
+  }
+
+  div {
+    display: flex;
+    justify-content: start;
+    margin-right: 1.5rem;
+    gap: 1rem;
+
+    input[type="text"] {
+      color: white;
+      outline: none;
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    svg {
+      height: 2rem;
+      width: auto;
+      fill: #0079fe;
+    }
+  }
+
+  button {
+    background-color: #0079fe;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  &.lightTheme {
+    div {
+      input[type="text"] {
+        color: #acb8c4;
+        &::placeholder {
+          color: #acb8c4;
+        }
+      }
+    }
+  }
+}
