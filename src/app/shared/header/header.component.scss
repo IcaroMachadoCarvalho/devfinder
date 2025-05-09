@@ -1,0 +1,40 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+  color: white;
+  transition: 0.2s linear all;
+
+  .themeToggle {
+    margin-left: 1rem;
+    font-size: var(--font-sm);
+    font-weight: bold;
+
+    &__option {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    svg {
+      fill: white;
+    }
+  }
+
+  &.lightTheme {
+    color: black;
+
+    .themeToggle {
+      p{
+        color: #506d98;
+      }
+      svg {
+        fill: #506d98;
+      }
+    }
+  }
+}
