@@ -1,0 +1,15 @@
+:host{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  max-width: 1048px;
+  width: 90%;
+  background-color: #1f2a48;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+
+  &.lightTheme{
+    background-color: #fcfffe;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
