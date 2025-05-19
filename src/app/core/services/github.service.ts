@@ -8,11 +8,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GithubService {
-  // private apiGithubUrl = environment.apiUrl;
+  private apiGithubUrl = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) { }
 
-  // queryUser(githubUsername:string): Observable<any>{
-  //   return this.httpClient.get<any>(`${this.apiGithubUrl}/${githubUsername}`);
-  // }
+   queryUser(githubUsername:string): Observable<any>{
+     const cleanUsername = githubUsername.replace(/^\/+/, ''); // remove barras iniciais
+      return this.httpClient.get(`https://api.github.com/users/${cleanUsername}`);
+  }
 }

@@ -1,0 +1,135 @@
+.resultDisplay {
+  padding: 1.5rem 1rem;
+  color: white;
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    &.lightTheme {
+      color: rgb(105, 124, 155);
+    }
+
+    &__identification {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      @media (min-width: 600px) {
+        gap: 32px;
+        margin-bottom: 0;
+      }
+
+      img {
+        width: 70px;
+        border-radius: 50px;
+
+        @media (min-width: 600px) {
+          width: 117px;
+        }
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0, 8125rem;
+
+        h1 {
+          font-size: 1rem;
+        }
+
+        a {
+          color: rgb(0, 119, 255);
+
+          word-break: break-word; /* quebra palavras longas */
+          overflow-wrap: break-word; /* alternativa compatível */
+          white-space: normal; /* permite quebra de linha */
+        }
+      }
+    }
+
+    &__info {
+      width: 100%;
+
+      @media(min-width: 600px){
+        width: 77%;
+        position: relative;
+        left: 25%;
+      }
+
+      .bio {
+        margin-bottom: 1rem;
+      }
+      .container__info {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 16px;
+        border-radius: 10px;
+        margin-bottom: 16px;
+        background-color: rgb(20, 29, 46);
+        gap: 1rem;
+
+        &.lightTheme {
+          background-color: rgb(245, 247, 255);
+          color: rgb(42, 51, 65);
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+
+      .contact {
+
+        @media (min-width: 600px) {
+          display: flex;
+          flex-wrap: wrap;
+          // gap: 0.5rem;
+
+          div{
+            padding-bottom: 0.5rem;
+          }
+        }
+
+        div.notAvailable {
+          p {
+            color: rgb(143, 150, 163);
+          }
+
+          svg {
+            stroke: rgb(143, 150, 163);
+          }
+        }
+
+        div {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+          flex: 1 1 50%;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &.lightTheme {
+          div.notAvaiable {
+            color: rgb(164, 180, 204);
+          }
+        }
+      }
+    }
+  }
+}

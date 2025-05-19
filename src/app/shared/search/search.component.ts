@@ -1,24 +1,30 @@
-import { GithubService } from './../../core/services/github.service';
 import { ThemeService } from './../../core/services/theme.service';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search',
-  standalone:false,
+  standalone: false,
   templateUrl: './search.component.html',
-  styleUrl: './search.component.scss'
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
+  @Output() search = new EventEmitter<string>();
+  @Input() error: boolean = false;
+  
   islightThemeActive$: Observable<boolean>;
-  searchValue: string = "";
+  searchValue: string = '';
 
-    constructor(private themeService:ThemeService){
-      this.islightThemeActive$ = themeService.lightMode$;
-    }
+  constructor(private themeService: ThemeService) {
+    this.islightThemeActive$ = themeService.lightMode$;
+  }
 
-    searchUser(){
-      console.log(this.searchValue);
-      // this.githubService.queryUser(this.searchValue)
-    }
+  @HostListener('document:keydown.enter', ['$event'])
+  onEnterPress(event: KeyboardEvent) {
+    this.searchUser();  
+  }
+
+  searchUser() {
+    this.search.emit(this.searchValue.trim());  // Emite o valor de busca
+  }
 }

@@ -9,12 +9,13 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ContainerComponent } from './shared/container/container.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './shared/search/search.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ResultDisplayComponent } from './shared/result-display/result-display.component';
 
 @NgModule({
-  declarations: [AppComponent,HomeComponent, HeaderComponent, ContainerComponent, SearchComponent],
-  imports: [BrowserModule, AppRoutingModule, RouterOutlet, FormsModule],
-  providers: [HttpClient],
+  declarations: [AppComponent,HomeComponent, HeaderComponent, ContainerComponent, SearchComponent, ResultDisplayComponent],
+  imports: [BrowserModule, AppRoutingModule, RouterOutlet, FormsModule, HttpClientModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,9 +1,9 @@
 <main class="content">
   <app-header></app-header>
   <app-container [ngClass]="{'lightTheme': (islightThemeActive$ | async)}">
-    <app-search></app-search>
+    <app-search (search)="getUserInfo($event)" [error]="error"></app-search>
   </app-container>
   <app-container [ngClass]="{'lightTheme': (islightThemeActive$ | async)}">
-    <h1>Hello</h1>
+    <app-result-display [userResponse]="userData"></app-result-display>
   </app-container>
 </main>

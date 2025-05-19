@@ -2,22 +2,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
 
   @media (max-width: 429px) {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   div {
     display: flex;
     justify-content: start;
-    margin-right: 1.5rem;
     gap: 1rem;
+    flex: 1 1 80%;
 
     input[type="text"] {
       color: white;
       outline: none;
+
       &::placeholder {
         color: white;
       }
@@ -30,12 +31,21 @@
     }
   }
 
+  span {
+    color: #f74646;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
   button {
     background-color: #0079fe;
     color: white;
     padding: 0.8rem 1.5rem;
+    // margin-left: 1.5rem;
     border-radius: 0.5rem;
     font-weight: bold;
+    flex: 0 0 20%;
 
     &:hover,
     &:focus {
@@ -47,6 +57,7 @@
     div {
       input[type="text"] {
         color: #acb8c4;
+
         &::placeholder {
           color: #acb8c4;
         }

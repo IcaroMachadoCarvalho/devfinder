@@ -27,12 +27,10 @@ describe('ThemeService', () => {
   it('should toggle theme correctly', (done) => {
     service.lightMode$.subscribe(isDark => {
       // Espera que o tema inicial seja light (false)
-      if (isDark === false) {
-        service.changeTheme();
-      } else {
-        expect(isDark).toBeTruthy();
-        done();
-      }
+      service.changeTheme();
+      expect(isDark).toBeFalsy();
+      service.changeTheme();
+      expect(isDark).toBeTruthy();
     });
   });
 });
