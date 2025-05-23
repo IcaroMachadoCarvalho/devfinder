@@ -1,1 +1,1 @@
-import 'jest-preset-angular/setup-jest'; // Isso já cuida de tudo
+// import 'jest-preset-angular/setup-jest'; // removi pois estava dando problema no ng test

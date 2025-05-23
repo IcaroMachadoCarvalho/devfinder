@@ -10,10 +10,10 @@ import { HttpClient } from '@angular/common/http';
 export class GithubService {
   private apiGithubUrl = environment.apiUrl;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
    queryUser(githubUsername:string): Observable<any>{
      const cleanUsername = githubUsername.replace(/^\/+/, ''); // remove barras iniciais
-      return this.httpClient.get(`https://api.github.com/users/${cleanUsername}`);
+      return this.http.get(`https://api.github.com/users/${cleanUsername}`);
   }
 }
